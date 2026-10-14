@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080808">
+<title>لولو | حكاية حب من آدم ♡</title>
+<style>
+:root{--gold:#e8c878;--gold-light:#fff2c5;--gold-dark:#a8792c;--ink:#080808;--panel:#11100d;--text:#f8f0df;--muted:#c0b49a}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:25px}
+body{margin:0;background:var(--ink);color:var(--text);font-family:Tahoma,Arial,sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:-3;background:radial-gradient(ellipse at 50% 0%,#4b351d 0%,#17120c 30%,#080808 72%)}
+#stars,#hearts-layer{position:fixed;inset:0;pointer-events:none;overflow:hidden}
+#stars{z-index:-1}#hearts-layer{z-index:20}
+.star{position:absolute;width:2px;height:2px;border-radius:50%;background:#fff0b9;animation:twinkle 3s infinite alternate}
+@keyframes twinkle{from{opacity:.15;transform:scale(.7)}to{opacity:.95;transform:scale(1.4)}}
+a{color:inherit}
+button{font:inherit}
+.container{width:min(1050px,92%);margin:auto}
+.gold{color:var(--gold)}
+.hero{min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;padding:55px 20px 75px;position:relative}
+.hero-inner{max-width:780px}
+.topline{font-size:.72rem;letter-spacing:4px;color:var(--gold);margin-bottom:27px}
+.emblem{width:100px;height:100px;border:1px solid #d8b45c88;border-radius:50%;display:grid;place-items:center;font-size:2.6rem;margin:0 auto 24px;box-shadow:0 0 55px #c59a4325,inset 0 0 25px #c59a4317;animation:float 4s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-8px)}}
+h1{font-size:clamp(3.6rem,14vw,8.3rem);line-height:1;margin:8px 0 20px;color:var(--gold-light);text-shadow:0 0 42px #e7c87836;letter-spacing:-3px}
+.hero-sub{color:#ded2ba;line-height:2.1;font-size:clamp(1rem,3vw,1.25rem);max-width:620px;margin:0 auto 28px}
+.gold-rule{display:flex;align-items:center;gap:15px;justify-content:center;color:var(--gold);margin:25px auto}
+.gold-rule:before,.gold-rule:after{content:"";width:65px;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
+.gold-rule:after{transform:rotate(180deg)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:1px solid var(--gold);border-radius:999px;padding:14px 25px;background:linear-gradient(130deg,#fff1bd,#c4933b);color:#171006;font-weight:bold;cursor:pointer;box-shadow:0 8px 28px #d1a34722;transition:transform .2s,box-shadow .2s;text-decoration:none}
+.btn:hover{transform:translateY(-3px);box-shadow:0 12px 35px #d1a34744}
+.btn.outline{background:transparent;color:var(--gold-light);box-shadow:none}
+.hint{font-size:.77rem;color:#9f9277;margin-top:14px}
+.scroll-cue{position:absolute;bottom:20px;left:0;right:0;color:#aa9b7d;font-size:.75rem;animation:bob 2s infinite}
+@keyframes bob{50%{transform:translateY(5px)}}
+nav{position:sticky;top:0;z-index:15;background:#090908e8;border-bottom:1px solid #c5a14a33;backdrop-filter:blur(14px)}
+.nav-inner{display:flex;justify-content:center;gap:clamp(12px,3vw,30px);padding:14px 10px;flex-wrap:wrap}
+nav a{text-decoration:none;color:#d4c5a5;font-size:.82rem;transition:color .2s}nav a:hover{color:var(--gold-light)}
+section{padding:88px 0}
+.section-kicker{text-align:center;color:var(--gold);font-size:.72rem;letter-spacing:3px;margin-bottom:12px}
+h2{text-align:center;color:var(--gold-light);font-size:clamp(1.8rem,5.8vw,3.1rem);margin:0 0 17px;line-height:1.4}
+.lead{text-align:center;color:var(--muted);line-height:2.1;max-width:680px;margin:0 auto 38px}
+.panel{border:1px solid #d6b65b55;background:linear-gradient(145deg,#ffffff0b,#c79a3510);border-radius:25px;padding:clamp(22px,5vw,44px);box-shadow:0 18px 70px #0007;backdrop-filter:blur(7px)}
+.countdown{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;max-width:790px;margin:30px auto 20px}
+.timebox{padding:22px 4px;text-align:center;border:1px solid #d9b65c55;border-radius:17px;background:linear-gradient(160deg,#ffffff0b,#ffffff02)}
+.timebox strong{display:block;color:var(--gold-light);font-size:clamp(1.8rem,6vw,3.4rem);font-variant-numeric:tabular-nums}
+.timebox span{display:block;color:#bfb092;font-size:.82rem;margin-top:8px}
+.note{text-align:center;color:#a99c80;font-size:.85rem;line-height:1.9}
+.letter{font-size:clamp(1rem,2.6vw,1.2rem);line-height:2.35;white-space:pre-line;text-align:center;min-height:160px;color:#f2e8d5}
+.signature{text-align:center;color:var(--gold);margin-top:25px;font-size:1.1rem}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.card{border:1px solid #d6b65b3d;background:linear-gradient(145deg,#ffffff09,#ffffff03);border-radius:21px;padding:26px 20px;min-height:200px;transition:transform .25s,border-color .25s}
+.card:hover{transform:translateY(-5px);border-color:#e8c878aa}
+.card-icon{font-size:2rem;margin-bottom:16px}
+.card h3{color:var(--gold-light);font-size:1.08rem;margin:0 0 12px}
+.card p{color:#c9bea8;line-height:2;margin:0;font-size:.93rem}
+.quote{font-size:clamp(1.25rem,4vw,2rem);line-height:2.1;text-align:center;color:var(--gold-light);max-width:750px;margin:auto}
+.quote small{display:block;color:#b7a98c;font-size:.86rem;margin-top:16px}
+.timeline{max-width:720px;margin:35px auto 0;position:relative}
+.timeline:before{content:"";position:absolute;top:0;bottom:0;right:14px;width:1px;background:#d4ad4e77}
+.moment{position:relative;margin:0 0 18px;padding:19px 42px 19px 20px;border:1px solid #d6b65b33;border-radius:15px;background:#ffffff06;line-height:1.9;color:#d7cbb5}
+.moment:before{content:"";position:absolute;right:8px;top:26px;width:13px;height:13px;border-radius:50%;background:var(--gold);box-shadow:0 0 16px #e8c87866}
+.moment b{display:block;color:var(--gold-light);margin-bottom:4px}
+.promise-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;max-width:760px;margin:auto}
+.promise{padding:18px;border-radius:15px;border:1px solid #d6b65b33;background:#ffffff05;color:#e5dac4;line-height:1.9}
+.promise span{color:var(--gold);margin-left:8px}
+.gift-zone{text-align:center}
+.gift{display:block;font-size:clamp(5rem,15vw,7rem);background:none;border:0;margin:0 auto 12px;cursor:pointer;filter:drop-shadow(0 0 22px #d6aa4b40);animation:giftfloat 2.5s ease-in-out infinite}
+@keyframes giftfloat{50%{transform:translateY(-10px) rotate(3deg)}}
+.reveal{display:none;max-width:660px;margin:25px auto 0;line-height:2.2;color:#f4e6c4;animation:appear .7s ease both}
+.reveal.show{display:block}
+@keyframes appear{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.cake{font-size:4.3rem}
+.music-box{max-width:600px;margin:auto;text-align:center}
+.music-status{color:#c6b99e;line-height:1.9;font-size:.9rem;margin:16px 0}
+.equalizer{display:flex;align-items:center;justify-content:center;gap:5px;height:30px;margin:12px}
+.equalizer i{display:block;width:4px;height:8px;background:var(--gold);border-radius:5px}
+.equalizer.playing i{animation:eq .7s infinite alternate ease-in-out}
+.equalizer i:nth-child(2n){animation-delay:.2s}.equalizer i:nth-child(3n){animation-delay:.4s}
+@keyframes eq{to{height:26px}}
+.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.photo-slot{min-height:180px;border:1px dashed #d6b65b70;border-radius:18px;background:linear-gradient(145deg,#ffffff0a,#d2a3420b);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:16px;color:#bfb092;line-height:1.9}
+.photo-slot strong{font-size:2.2rem;color:var(--gold);margin-bottom:10px}
+.photo-slot small{font-size:.75rem}
+
+/* cinematic presentation + real photo cards */
+.photo-slot{position:relative;overflow:hidden;min-height:270px;border:1px solid #d6b65b70;padding:0;justify-content:flex-end;background:#111;box-shadow:0 12px 35px #0008;isolation:isolate}
+.photo-slot:before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#080604ee 0%,#08060418 70%);z-index:-1}
+.photo-slot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .7s ease,filter .7s ease;filter:saturate(.82)}
+.photo-slot:hover img{transform:scale(1.07);filter:saturate(1.1)}
+.photo-slot strong{font-size:1.15rem;color:#fff2c5;margin:0 0 6px;text-shadow:0 2px 10px #000}
+.photo-slot small{color:#f4e7cb;margin-bottom:18px}
+.heart-notes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.heart-note{position:relative;min-height:155px;text-align:right;padding:22px;border:1px solid #d6b65b55;border-radius:20px;background:linear-gradient(145deg,#21190eaa,#0d0b08dd);color:#e9ddc5;cursor:pointer;transition:transform .25s,border-color .25s;overflow:hidden}
+.heart-note:hover,.heart-note:focus-visible{transform:translateY(-5px);border-color:var(--gold);outline:none}
+.heart-note .tap-icon{display:block;font-size:1.6rem;color:var(--gold);margin-bottom:13px}
+.heart-note .tap-title{display:block;color:var(--gold-light);font-weight:bold;margin-bottom:8px}
+.heart-note .tap-copy{display:block;line-height:1.9;color:#cfc1a7;font-size:.91rem}
+.heart-note:after{content:"اضغطي واكتشفي";display:block;font-size:.72rem;color:#a99465;margin-top:12px}
+.presentation{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center}
+.presentation-photo{min-height:340px;border-radius:25px;overflow:hidden;border:1px solid #d6b65b55;box-shadow:0 20px 55px #0009}
+.presentation-photo img{width:100%;height:100%;min-height:340px;object-fit:cover;display:block}
+.presentation-copy{line-height:2.15;color:#d8cbb1}
+.presentation-copy h3{color:var(--gold-light);font-size:1.6rem;line-height:1.6}
+#fireworks{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:50}
+.gift{font-size:clamp(5rem,15vw,7rem);transition:filter .2s}
+.gift:active{transform:scale(.92)}
+.firework-note{color:var(--gold);font-size:.85rem;margin-top:10px}
+@media(max-width:700px){.heart-notes{grid-template-columns:1fr}.presentation{grid-template-columns:1fr}.presentation-photo,.presentation-photo img{min-height:250px}.photo-slot{min-height:220px}}
+
+.end{text-align:center;padding:85px 15px 55px;border-top:1px solid #d6b65b25}
+.end h2{font-size:clamp(2rem,7vw,4rem)}
+.end p{color:#c7b99c;line-height:2}
+footer{text-align:center;color:#81755e;font-size:.75rem;padding:0 15px 30px}
+.floaty{position:fixed;bottom:-30px;pointer-events:none;animation:rise 6s linear forwards;z-index:22}
+@keyframes rise{to{transform:translateY(-115vh) rotate(35deg);opacity:0}}
+.hidden{display:none!important}
+@media(max-width:700px){section{padding:65px 0}.cards{grid-template-columns:1fr}.card{min-height:0}.gallery{grid-template-columns:1fr 1fr}.photo-slot{min-height:150px}.promise-grid{grid-template-columns:1fr}.nav-inner{gap:14px}nav a{font-size:.75rem}}
+@media(max-width:420px){.countdown{gap:6px}.timebox{padding:16px 2px}.timebox span{font-size:.68rem}.panel{padding:20px 14px}.gallery{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
+
+/* Luxury botanical paper letters with a tactile 3D flip */
+.heart-notes.floral-notes{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;max-width:900px;margin:0 auto;perspective:1400px}
+.heart-note.paper-card{padding:0;border:0;background:transparent;min-height:310px;overflow:visible;text-align:center;border-radius:5px;color:#463024;perspective:1200px;box-shadow:none;transform:none}
+.heart-note.paper-card:hover,.heart-note.paper-card:focus-visible{transform:translateY(-4px);outline:none}
+.paper-inner{display:block;position:relative;width:100%;height:310px;transform-style:preserve-3d;transition:transform .85s cubic-bezier(.2,.75,.18,1)}
+.paper-card.is-flipped .paper-inner{transform:rotateY(180deg)}
+.paper-face{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:26px 25px;overflow:hidden;backface-visibility:hidden;-webkit-backface-visibility:hidden;border:1px solid #c8a56b;border-radius:4px 14px 5px 13px;background:radial-gradient(ellipse at 50% 0%,#fffdf4,#f4e6ca 72%,#e9d4af);box-shadow:0 16px 35px #0008,inset 0 0 0 5px #fff8e9,inset 0 0 0 6px #c8a56b66}
+.paper-face:before{content:"";position:absolute;inset:12px;border:1px solid #b9905b80;pointer-events:none}
+.paper-front{color:#5b3c2a}
+.paper-back{transform:rotateY(180deg);color:#52382b;background:radial-gradient(ellipse at 50% 0%,#fffdf4,#f7e9d3 76%,#e8d0ac)}
+.flower-corner{position:absolute;color:#a04f61;font-size:1.55rem;letter-spacing:3px;line-height:1;filter:drop-shadow(0 2px 2px #8c4d3420)}
+.flower-corner.top-left{top:18px;left:19px;transform:rotate(-15deg)}
+.flower-corner.bottom-right{right:18px;bottom:17px;transform:rotate(165deg)}
+.pressed-flower{font-size:2.4rem;margin:3px 0 12px;filter:drop-shadow(0 4px 3px #8c4d3420)}
+.paper-label{font-family:Georgia,serif;color:#8c5d3e;font-size:.83rem;letter-spacing:1.5px;margin-bottom:8px}
+.paper-title{font-family:Georgia,Tahoma,serif;font-size:clamp(1.65rem,4vw,2.25rem);font-weight:bold;color:#633b36;margin-bottom:8px;text-shadow:0 1px #fff8}
+.paper-subtitle{font-size:.91rem;color:#89644a;line-height:1.8}
+.paper-seal{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:linear-gradient(145deg,#a54f5b,#71313c);color:#fff0d8;font-size:1.3rem;box-shadow:0 3px 7px #6a2e342b;margin-top:15px}
+.paper-tap{position:absolute;bottom:20px;font-size:.72rem;color:#9a775b;letter-spacing:.4px}
+.back-flower{font-size:1.8rem;margin-bottom:6px}
+.back-title{font-size:1.2rem;line-height:1.6;color:#7d3e46;font-weight:bold;margin-bottom:12px;max-width:95%}
+.back-message{font-size:.91rem;line-height:1.95;color:#634c3d;max-width:430px}
+.back-sign{font-family:Georgia,Tahoma,serif;color:#9a5c5a;font-size:.92rem;margin-top:13px;font-style:italic}
+.paper-card:nth-child(2) .paper-face{background:radial-gradient(ellipse at 50% 0%,#fffdf7,#f3e4e1 75%,#e6cbd0)}
+.paper-card:nth-child(3) .paper-face{background:radial-gradient(ellipse at 50% 0%,#fffdf3,#f5e8d0 74%,#e6d1a9)}
+.paper-card:nth-child(4) .paper-face{background:radial-gradient(ellipse at 50% 0%,#fffdf8,#eee4f0 74%,#d9c7df)}
+.paper-card:nth-child(2) .flower-corner{color:#a14f6a}.paper-card:nth-child(3) .flower-corner{color:#9e5543}.paper-card:nth-child(4) .flower-corner{color:#8b5c91}
+.heart-note.paper-card:after{display:none}
+@media(max-width:700px){.heart-notes.floral-notes{grid-template-columns:1fr;max-width:410px;gap:18px}.heart-note.paper-card{min-height:300px}.paper-inner{height:300px}.paper-face{padding:24px 22px}.back-message{font-size:.88rem;line-height:1.85}}
+@media(prefers-reduced-motion:reduce){.paper-inner{transition:none}}
+
+
+/* Extra luxury details: a grand bouquet and a couture-style signature */
+.bouquet-button{position:relative;display:block;width:min(390px,88vw);height:350px;margin:12px auto 4px;border:0;background:transparent;cursor:pointer;filter:drop-shadow(0 20px 22px #0008);transition:transform .35s ease;}
+.bouquet-button:hover{transform:translateY(-7px) scale(1.025)}
+.bouquet-button:active{transform:scale(.97)}
+.bouquet-art{position:absolute;inset:0;display:block}
+.bouquet-flower{position:absolute;z-index:3;font-size:clamp(2.4rem,9vw,3.6rem);line-height:1;filter:drop-shadow(0 4px 4px #0005);animation:flowerSway 3.4s ease-in-out infinite;transform-origin:50% 100%}
+.bouquet-flower:nth-child(1){left:19%;top:22%;transform:rotate(-18deg);animation-delay:-.7s}
+.bouquet-flower:nth-child(2){left:37%;top:8%;font-size:clamp(3rem,10vw,4.2rem);animation-delay:-1.2s}
+.bouquet-flower:nth-child(3){left:57%;top:18%;transform:rotate(15deg);animation-delay:-.3s}
+.bouquet-flower:nth-child(4){left:9%;top:39%;font-size:clamp(2.5rem,8vw,3.2rem);animation-delay:-1.8s}
+.bouquet-flower:nth-child(5){left:31%;top:35%;font-size:clamp(2.7rem,9vw,3.7rem);animation-delay:-.9s}
+.bouquet-flower:nth-child(6){left:54%;top:38%;font-size:clamp(2.6rem,8vw,3.3rem);animation-delay:-1.5s}
+.bouquet-flower:nth-child(7){left:72%;top:36%;font-size:clamp(2.2rem,7vw,2.9rem);animation-delay:-.5s}
+.bouquet-leaf{position:absolute;z-index:1;font-size:2.2rem;color:#66855a;filter:drop-shadow(0 3px 3px #0005)}
+.bouquet-leaf.l1{left:20%;top:42%;transform:rotate(-35deg)}.bouquet-leaf.l2{left:64%;top:45%;transform:rotate(35deg)}.bouquet-leaf.l3{left:39%;top:48%;transform:rotate(-10deg)}
+.bouquet-wrap{position:absolute;z-index:4;left:17%;right:17%;bottom:12%;height:46%;clip-path:polygon(8% 0,92% 0,70% 100%,30% 100%);background:linear-gradient(110deg,#8e1d37,#f0c7b7 24%,#fff0d9 43%,#bd6371 67%,#78162c);box-shadow:inset 0 0 0 3px #e9c878;}
+.bouquet-wrap:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(115deg,#ffffff22 0 2px,transparent 2px 17px)}
+.bouquet-ribbon{position:absolute;z-index:5;left:34%;right:34%;bottom:25%;height:29px;background:linear-gradient(#f8e1a0,#b78025,#f5d783);border:1px solid #fff0bd;border-radius:4px;box-shadow:0 4px 10px #0004}
+.bouquet-ribbon:before,.bouquet-ribbon:after{content:"";position:absolute;top:4px;width:29px;height:33px;border:2px solid #e6c36b;border-radius:3px 15px 3px 15px;background:linear-gradient(135deg,#f4d98a,#a66f22)}
+.bouquet-ribbon:before{right:75%;transform:rotate(30deg)}.bouquet-ribbon:after{left:75%;transform:rotate(-30deg)}
+@keyframes flowerSway{0%,100%{translate:0 0;rotate:-2deg}50%{translate:0 -5px;rotate:3deg}}
+.bouquet-caption{font-size:.9rem;color:#d9c18a;margin:0 auto 10px;letter-spacing:.5px}
+.end-signature{display:inline-block;margin:28px auto 0;padding:17px 28px;border-top:1px solid #d7b45e77;border-bottom:1px solid #d7b45e77;color:#f5df9c;font-family:Georgia,Tahoma,serif;font-size:clamp(1.05rem,4vw,1.5rem);letter-spacing:.3px;text-shadow:0 0 22px #d6aa4b33;position:relative}
+.end-signature:before,.end-signature:after{content:"✦";color:#d9b75e;font-size:.8rem;position:absolute;top:50%;transform:translateY(-50%)}
+.end-signature:before{right:7px}.end-signature:after{left:7px}
+.end-signature span{display:block;font-family:Tahoma,Arial,sans-serif;font-size:.72rem;letter-spacing:2px;color:#a99978;margin-top:9px}
+@media(max-width:420px){.bouquet-button{height:310px}.bouquet-wrap{bottom:11%}.bouquet-ribbon{bottom:24%}}
+
+
+/* Real-photo upgrade: cinematic couple hugs + a natural, photographic bouquet */
+.gallery{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.photo-slot{min-height:320px;border-radius:20px}
+.photo-slot img{filter:saturate(.88) contrast(1.03);transition:transform .8s cubic-bezier(.2,.7,.2,1),filter .5s}
+.photo-slot:hover img{transform:scale(1.075);filter:saturate(1.08) contrast(1.04)}
+.bouquet-button{width:min(430px,90vw);height:450px;border-radius:28px;overflow:hidden;filter:drop-shadow(0 24px 30px #000a);isolation:isolate}
+.bouquet-art{position:absolute;inset:0;overflow:hidden;border-radius:28px;border:1px solid #e8c87888;background:#1a0d12;box-shadow:inset 0 0 0 5px #e8c87818}
+.bouquet-photo{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover;object-position:center 48%;transform:scale(1.015);transition:transform 1.2s cubic-bezier(.2,.7,.2,1),filter .7s;filter:saturate(1.06) contrast(1.03)}
+.bouquet-button:hover .bouquet-photo{transform:scale(1.075);filter:saturate(1.13) contrast(1.05)}
+.bouquet-art:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#16070b05 48%,#18080b40 72%,#100609b8 100%);pointer-events:none}
+.bouquet-photo-caption{position:absolute;z-index:2;bottom:17px;left:0;right:0;color:#fff0cf;font-family:Georgia,serif;font-size:.78rem;letter-spacing:4px;text-shadow:0 2px 12px #000;pointer-events:none}
+.bouquet-glint{position:absolute;z-index:3;width:8px;height:8px;border-radius:50%;background:#fff1bf;box-shadow:0 0 16px 5px #ffe7a255;animation:glintPulse 2.4s ease-in-out infinite;pointer-events:none}
+.glint-one{top:17%;right:18%}.glint-two{top:38%;left:13%;animation-delay:1.2s}
+@keyframes glintPulse{0%,100%{opacity:.15;transform:scale(.6)}50%{opacity:1;transform:scale(1.2)}}
+.bouquet-button.bouquet-opened .bouquet-photo{transform:scale(1.1)}
+@media(max-width:700px){.gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.photo-slot{min-height:260px}.bouquet-button{height:390px}}
+@media(max-width:420px){.gallery{grid-template-columns:1fr}.photo-slot{min-height:300px}.bouquet-button{height:360px}}
+@media(prefers-reduced-motion:reduce){.bouquet-photo,.photo-slot img{transition:none}.bouquet-glint{animation:none;opacity:.6}}
+</style>
+</head>
+<body>
+<div id="stars" aria-hidden="true"></div><div id="hearts-layer" aria-hidden="true"></div>
+
+<header class="hero" id="home">
+  <div class="hero-inner">
+    <div class="topline">A LITTLE UNIVERSE MADE FOR YOU</div>
+    <div class="emblem" style="overflow:hidden;border-color:#e8c878; padding:0"><img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=240&q=80" alt="لحظة حب" style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div>
+    <div class="gold-rule">حكاية آدم ولولو</div>
+    <h1>لولو</h1>
+    <p class="hero-sub">مش كل يوم بيكون عادي… في يوم جه فيه للدنيا شخص يستاهل الدنيا كلها.<br>والنهارده بنجهّز احتفال مخصوص لأجمل بنت في الحكاية. ♡</p>
+    <button class="btn" id="begin">ابدئي رحلتك يا لولو ✨</button>
+    <div class="hint">اتعملي براحتك… كل تفصيلة هنا معمولة بحب</div>
+  </div>
+  <div class="scroll-cue">انزلي واكتشفي المفاجأة　⌄</div>
+</header>
+
+<nav aria-label="التنقل في الموقع"><div class="nav-inner container">
+  <a href="#countdown">العداد</a><a href="#letterSection">الرسالة</a><a href="#reasons">ليه إنتِ؟</a><a href="#heartWords">كلام من القلب</a><a href="#promises">وعودي</a><a href="#surprise">المفاجأة</a>
+</div></nav>
+
+<main>
+<section id="countdown" class="container">
+  <div class="section-kicker">THE BIG DAY</div>
+  <h2>الوقت لحد عيد ميلادك 🎂</h2>
+  <p class="lead">في يوم 11 يناير، الدنيا زادت شخص جميل… والعدّاد ده بيحسب الوقت لحد الاحتفال الجاي بيكي.</p>
+  <div class="panel">
+    <div class="countdown">
+      <div class="timebox"><strong id="days">---</strong><span>يوم</span></div>
+      <div class="timebox"><strong id="hours">--</strong><span>ساعة</span></div>
+      <div class="timebox"><strong id="minutes">--</strong><span>دقيقة</span></div>
+      <div class="timebox"><strong id="seconds">--</strong><span>ثانية</span></div>
+    </div>
+    <p class="note" id="countNote">بنستنى يومك بكل حب ♡</p>
+  </div>
+</section>
+
+<section class="container" id="presentation">
+  <div class="section-kicker">MADE WITH ALL MY HEART</div>
+  <h2>مش صفحة على الإنترنت… دي حكاية ليكي إنتِ ✨</h2>
+  <p class="lead">كل تفصيلة هنا بتقول إنك غالية، وإن اليوم ده يستاهل يتعمله احتفال مختلف.</p>
+  <div class="presentation panel">
+    <div class="presentation-photo"><img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=1000&q=85" alt="زوجان في لحظة رومانسية"></div>
+    <div class="presentation-copy"><div class="section-kicker" style="text-align:right">A LETTER TO MY FAVORITE PERSON</div><h3>يا لولو، لو كان ينفع أديكي إحساس بدل هدية…</h3><p>كنت هديكي إحساس إنك متقدّرة، ومسموعة، ومحبوبة زي ما إنتِ. كنت هديكي طمأنينة في الأيام الصعبة، وضحكة في الأيام العادية، وحد يفرح لفرحتك من قلبه.</p><p>مش لازم كل الكلام يبقى كبير علشان يبقى حقيقي؛ ساعات كلمة في وقتها بتساوي الدنيا. وإنتِ تستاهلي كلام حلو كتير، مش في عيد ميلادك بس… كل يوم.</p><div class="gold-rule">من آدم إلى لولو</div></div>
+  </div>
+</section>
+
+<section id="letterSection" class="container">
+  <div class="section-kicker">FROM ADAM, WITH LOVE</div>
+  <h2>رسالة ليكي من القلب 💌</h2>
+  <p class="lead">اقريها على مهلك… دي مش مجرد كلمات، دي مشاعر بحاول أوصفها.</p>
+  <div class="panel">
+    <div class="letter" id="letter">لولو حبيبتي… ❤️</div>
+    <div class="signature">بحبك يا لولو — آدم ♡</div>
+  </div>
+  <div style="text-align:center;margin-top:22px"><button class="btn outline" id="retype">اقري الرسالة من الأول ↻</button></div>
+</section>
+
+<section id="reasons" class="container">
+  <div class="section-kicker">A FEW REASONS</div>
+  <h2>حاجات بحبها فيكي 💛</h2>
+  <p class="lead">مهما كتبت، هيفضل في حاجات كتير حلوة فيكي أكبر من الكلام.</p>
+  <div class="cards">
+    <article class="card"><div class="card-icon">🌙</div><h3>وجودك بيطمنّي</h3><p>في ناس مجرد وجودها بيخلّي اليوم أهدى، وإنتِ من الناس اللي وجودهم بيفرق بجد.</p></article>
+    <article class="card"><div class="card-icon">✨</div><h3>تفاصيلك المميزة</h3><p>ضحكتك، كلامك، وطريقتك في الحاجات الصغيرة… تفاصيل بتفضل في بالي حتى بعد ما اليوم يخلص.</p></article>
+    <article class="card"><div class="card-icon">🌷</div><h3>قلبك الجميل</h3><p>بتمنالك دايمًا كل خير، ونفسي أشوفك مبسوطة وفخورة بنفسك وبكل حاجة بتحققيها.</p></article>
+    <article class="card"><div class="card-icon">🫶</div><h3>إنك إنتِ</h3><p>مش محتاجة تبقي حد تاني علشان تبقي مميزة. إنتِ كفاية بكل عفويتك وتفاصيلك.</p></article>
+    <article class="card"><div class="card-icon">🎀</div><h3>اللحظات الصغيرة</h3><p>رسالة منك، مكالمة حلوة، أو ضحكة من القلب… حاجات بسيطة لكنها بتعمل فرق كبير.</p></article>
+    <article class="card"><div class="card-icon">💫</div><h3>الأحلام اللي جاية</h3><p>بتمنى ليكي مستقبل يليق بقلبك، وفرص حلوة، وأيام تفتكريها بابتسامة.</p></article>
+  </div>
+</section>
+
+<section class="container">
+  <div class="panel">
+    <div class="section-kicker">JUST ONE THOUGHT</div>
+    <div class="quote">"وسط كل الزحمة، في ناس بتبقى هي الحتة الهادية اللي القلب بيرتاح فيها… وإنتِ من أجمل الحاجات اللي حصلتلي." <small>— آدم إلى لولو ♡</small></div>
+  </div>
+</section>
+
+<section class="container" id="moments">
+  <div class="section-kicker">OUR LITTLE STORY</div>
+  <h2>حكايتنا لسه بتتكمل 📖</h2>
+  <p class="lead">كل حكاية حلوة بتتكوّن من لحظات صغيرة… واللي جاي لسه فيه صفحات كتير.</p>
+  <div class="timeline">
+    <div class="moment"><b>الفصل الأول · البداية ✨</b>كل حكاية ليها بداية، وأجمل حاجة فيها إنها بتفتح باب لذكريات جديدة.</div>
+    <div class="moment"><b>الفصل التاني · التفاصيل 💌</b>الكلام اللي بيطوّل من غير ما نحس، والضحكة اللي بتيجي في وقتها، والتفاصيل اللي بتقرب القلوب.</div>
+    <div class="moment"><b>الفصل التالت · اللي جاي 🌙</b>أيام جديدة، أحلام جديدة، وفرصة كل يوم إننا نكون أحنّ على بعض ونفهم بعض أكتر.</div>
+  </div>
+</section>
+
+<section class="container" id="heartWords">
+  <div class="section-kicker">TAP TO FEEL THE LOVE</div>
+  <h2>كل ضغطة… كلمة طالعة من قلبي ❤️</h2>
+  <p class="lead">يا لولو، دوسي على أي كارت… وكل مرة هتلاقي رسالة صغيرة مخصوص ليكي.</p>
+  <div class="heart-notes floral-notes" id="heartNotes">
+    <button class="heart-note paper-card" type="button" aria-label="افتحي رسالة عن حب آدم ليكي">
+      <span class="paper-inner"><span class="paper-face paper-front"><span class="flower-corner top-left">✿ ❀</span><span class="pressed-flower">🌷</span><span class="paper-label">إلى لولو الجميلة</span><span class="paper-title">رسالة حب</span><span class="paper-subtitle">من قلب آدم لقلبك</span><span class="paper-seal">♡</span><span class="flower-corner bottom-right">❀ ✿</span><span class="paper-tap">اضغطي وافتحي الورقة</span></span><span class="paper-face paper-back"><span class="back-flower">❀</span><span class="back-title">إنتِ بيتي الحلو ❤️</span><span class="back-message">يا لولو، وجودك في حياتي مش حاجة عادية؛ إنتِ راحة وسط الزحمة، وضحكة بتغيّر يومي، ونعمة بحمد ربنا عليها. نفسي دايمًا أحسسك إنك غالية ومحبوبة زي ما إنتِ.</span><span class="back-sign">بحبك — آدم</span><span class="flower-corner bottom-right">🌹 ❀</span></span></span>
+    </button>
+    <button class="heart-note paper-card" type="button" aria-label="افتحي رسالة عن مكانتك عند آدم">
+      <span class="paper-inner"><span class="paper-face paper-front"><span class="flower-corner top-left">❀ ✿</span><span class="pressed-flower">🌸</span><span class="paper-label">سر صغير</span><span class="paper-title">إنتِ مميزة</span><span class="paper-subtitle">أكتر مما تتخيلي</span><span class="paper-seal">♡</span><span class="flower-corner bottom-right">✿ ❀</span><span class="paper-tap">اضغطي وافتحي الورقة</span></span><span class="paper-face paper-back"><span class="back-flower">🌸</span><span class="back-title">إنتِ مش شبه حد</span><span class="back-message">بحب تفاصيلك اللي يمكن إنتِ نفسك مش واخدة بالك منها؛ طريقتك في الكلام، ضحكتك، وحتى اللحظات اللي بتبقي فيها على طبيعتك. مش محتاج منك تكوني كاملة، أنا بحب حقيقتك وروحك الحلوة.</span><span class="back-sign">إنتِ كفاية وزيادة — آدم</span><span class="flower-corner bottom-right">❀ 🌷</span></span></span>
+    </button>
+    <button class="heart-note paper-card" type="button" aria-label="افتحي رسالة عن دعم آدم ليكي">
+      <span class="paper-inner"><span class="paper-face paper-front"><span class="flower-corner top-left">✿ ❀</span><span class="pressed-flower">🌹</span><span class="paper-label">وعد من قلبي</span><span class="paper-title">أنا جنبك</span><span class="paper-subtitle">في الحلو والصعب</span><span class="paper-seal">♡</span><span class="flower-corner bottom-right">❀ ✿</span><span class="paper-tap">اضغطي وافتحي الورقة</span></span><span class="paper-face paper-back"><span class="back-flower">🌹</span><span class="back-title">مش لازم تشيلي كل حاجة لوحدك</span><span class="back-message">في الأيام اللي الدنيا تضيق فيها، أتمنى تفتكري إن مشاعرك مهمة وإنك تستاهلي حد يسمعك ويفهمك. هفضل أشجعك على أحلامك، وأفرح بنجاحك، وأتمنى لقلبك راحة وأمان من كل قلبي.</span><span class="back-sign">دايمًا بتمنالك الخير — آدم</span><span class="flower-corner bottom-right">🌷 ❀</span></span></span>
+    </button>
+    <button class="heart-note paper-card" type="button" aria-label="افتحي أمنية آدم ليكي">
+      <span class="paper-inner"><span class="paper-face paper-front"><span class="flower-corner top-left">❀ ✿</span><span class="pressed-flower">💐</span><span class="paper-label">أمنية لولو</span><span class="paper-title">أحلى أيامك</span><span class="paper-subtitle">لسه جاية يا حبيبتي</span><span class="paper-seal">♡</span><span class="flower-corner bottom-right">✿ ❀</span><span class="paper-tap">اضغطي وافتحي الورقة</span></span><span class="paper-face paper-back"><span class="back-flower">💐</span><span class="back-title">نفسي أشوفك مبسوطة دايمًا</span><span class="back-message">أمنيتي ليكي إن السنة الجديدة من عمرك تكون مليانة فرح ونجاح وراحة بال، وإن كل حلم مخبياه جواكي يقرب خطوة. لو أقدر أهديكي حاجة كل يوم، ههديكي سبب جديد تبتسمي عشانه.</span><span class="back-sign">كل سنة وإنتِ حبيبتي — آدم</span><span class="flower-corner bottom-right">❀ 🌸</span></span></span>
+    </button>
+  </div>
+  <p class="note" id="heartNoteStatus" aria-live="polite" style="margin-top:18px">اختاري كارت… وخلي قلبك يقرأ قبل عينيكي ❤️</p>
+</section>
+
+<section class="container" id="promises">
+  <div class="section-kicker">MY WISHES FOR YOU</div>
+  <h2>أمنياتي ليكي في سنتك الجديدة 🤍</h2>
+  <p class="lead">مش هتمنالك يوم حلو وبس… هتمنالك سنة كاملة فيها حاجات تستاهليها.</p>
+  <div class="promise-grid">
+    <div class="promise"><span>✦</span>راحة بال تخلّي قلبك مطمّن.</div>
+    <div class="promise"><span>✦</span>ضحكة حقيقية من قلبك كل يوم.</div>
+    <div class="promise"><span>✦</span>نجاح في كل حاجة بتتعبي علشانها.</div>
+    <div class="promise"><span>✦</span>ناس صادقة تحبك وتحترمك.</div>
+    <div class="promise"><span>✦</span>أحلام كنتِ فاكرة إنها بعيدة وتتحقق.</div>
+    <div class="promise"><span>✦</span>ذكريات حلوة تفضلي تحكيها وتبتسمي.</div>
+  </div>
+</section>
+
+<section class="container" id="gallery">
+  <div class="section-kicker">ROMANTIC MOODBOARD</div>
+  <h2>صور بتحكي عن الحب 📸</h2>
+  <p class="lead">اخترتلك صور رومانسية بطابع سينمائي بدل الرموز… كأنها مشاهد من فيلم حلو.</p>
+  <div class="gallery">
+    <div class="photo-slot"><img loading="lazy" src="https://images.unsplash.com/photo-1578359214288-8b879bc25335?auto=format&fit=crop&w=900&q=85" alt="شاب وفتاة أوروبيان يحتضنان بعضهما بحنان"><strong>حضن يطمن القلب</strong><small>أوقات القرب بتقول كلام أكتر من الكلام</small></div>
+    <div class="photo-slot"><img loading="lazy" src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=900&q=85" alt="زوجان أوروبيان في لحظة رومانسية"><strong>تفاصيل صغيرة… حب كبير</strong><small>أجمل اللحظات هي اللي بنحس فيها بالأمان</small></div>
+    <div class="photo-slot"><img loading="lazy" src="https://static.showit.co/1200/2LDd6Q6-Q0-6SGaM1SKYAQ/190739/img_0839.jpg" alt="زوجان يحتضنان بعضهما في ضوء الشتاء"><strong>حضن من القلب</strong><small>لحظة دافية كأن الدنيا كلها سكتت</small></div>
+    <div class="photo-slot"><img loading="lazy" src="https://images.squarespace-cdn.com/content/v1/64cd981892c26b03d9af0d8f/e78dec72-a423-499d-ab02-0377dffd260e/Couples%2BSession%2B/%2BNicole%2BReine%2BPhotography.jpg" alt="رجل يحتضن حبيبته بحنان"><strong>مكانك الآمن</strong><small>إنك تلاقي حد يحتوي قلبك من غير ما تشرحي</small></div>
+    <div class="photo-slot"><img loading="lazy" src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=900&q=85" alt="لحظة حب رومانسية"><strong>حكاية شبه الأفلام</strong><small>والأجمل إن كل حكاية ليها تفاصيلها</small></div>
+    <div class="photo-slot"><img loading="lazy" src="https://images-pw.pixieset.com/elementfield/335538331/IMG_6788-0bd0ace2.jpg" alt="زوجان يحتضنان بعضهما وقت الغروب"><strong>على مهلك يا قلب</strong><small>الحب الحقيقي دفا وراحة وابتسامة</small></div>
+  </div>
+  <p class="note" style="margin-top:14px">الصور للجو الرومانسي، وتقدري بعدين تبدليها بصوركم الحقيقية.</p>
+</section>
+
+<section class="container">
+  <div class="panel music-box">
+    <div class="section-kicker">A LITTLE MUSIC</div>
+    <h2>مزيكا هادية للحظة دي 🎶</h2>
+    <div class="equalizer" id="equalizer"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <p class="music-status" id="musicStatus">لو حابب تضيف أغنيتكم المفضلة، حط ملف MP3 جنب ملف HTML وسمّيه song.mp3، وبعدها فعّل مشغل الموسيقى من الكود.</p>
+    <audio id="song" preload="none" loop><source src="song.mp3" type="audio/mpeg"></audio>
+    <button class="btn outline" id="musicBtn">تشغيل / إيقاف الموسيقى ♪</button>
+  </div>
+</section>
+
+<section class="container gift-zone" id="surprise">
+  <div class="section-kicker">THE FINAL SURPRISE</div>
+  <h2>لسه في مفاجأة أخيرة يا لولو 🎁</h2>
+  <p class="lead">اضغطي على الهدية… واستعدّي لفرقعة شماريخ وألعاب نارية وقلوب بتنور السما مخصوص ليكي! 🎆</p>
+  <button class="bouquet-button" id="giftBtn" aria-label="افتحي بوكيه الورد الكبير">
+    <span class="bouquet-art" aria-hidden="true">
+      <img class="bouquet-photo" src="https://images.unsplash.com/photo-1680563899402-26c3a712831f?auto=format&fit=crop&w=1000&q=90" alt="">
+      <span class="bouquet-glint glint-one"></span><span class="bouquet-glint glint-two"></span>
+      <span class="bouquet-photo-caption">FOR YOU, LOLO ♡</span>
+    </span>
+  </button>
+  <p class="bouquet-caption">باقة ورد كبيرة… قدّامها كل الكلام قليل يا لولو 🌹</p>
+  <canvas id="fireworks" aria-hidden="true"></canvas>
+  <div class="firework-note">دوسي على الهدية علشان المفاجأة تنفجر فرحة ✨</div>
+  <div class="note">اضغطي هنا علشان تفتحي هديتك</div>
+  <div class="reveal" id="reveal">
+    <div class="cake">🎂🎆✨</div>
+    <h2>كل سنة وإنتِ طيبة يا لولو!</h2>
+    أتمنى سنتك الجديدة تكون مليانة فرحة ونجاح وراحة بال، وإن كل حلم حلو جواكي يلاقي طريقه للنور.<br>
+    أتمنى تفضلي دايمًا فخورة بنفسك، محاطة بالحب، وعندك ألف سبب يخليكي تبتسمي.<br>
+    <strong class="gold">إنتِ تستاهلي كل حاجة حلوة في الدنيا. ❤️</strong>
+    <div class="signature">من آدم للولو، بكل الحب ♡</div>
+    <button class="btn" id="heartBtn">خلّي الدنيا قلوب ❤️</button>
+  </div>
+</section>
+</main>
+
+<div class="end">
+  <div class="gold-rule">نهاية المفاجأة… مش الحكاية</div>
+  <h2>آدم <span class="gold">×</span> لولو</h2>
+  <p>كل سنة وإنتِ أقرب للفرحة، وأبعد عن الزعل.<br>وكل سنة وحكايتك لسه فيها بدايات جميلة. ♡</p>
+  <button class="btn outline" id="topBtn">ارجعي لأول الصفحة ↑</button>
+</div>
+<footer><div class="end-signature">موقع المبرمج آدم <span>بالتعاون مع</span> الدكتورة علا ♡</div><div style="margin-top:18px;color:#81755e">صُنع بكل ذوق وحب… لأجمل حكاية 🌹</div></footer>
+
+<script>
+(function(){
+  const stars=document.getElementById('stars');
+  for(let i=0;i<78;i++){
+    const s=document.createElement('i');s.className='star';
+    s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';
+    const size=1+Math.random()*2.2;s.style.width=size+'px';s.style.height=size+'px';
+    s.style.animationDelay=Math.random()*4+'s';s.style.animationDuration=2+Math.random()*4+'s';stars.appendChild(s);
+  }
+
+  // Birthday is January 11. Count down to the next occurrence in the visitor's local time.
+  function updateCountdown(){
+    const now=new Date();let year=now.getFullYear();
+    let target=new Date(year,0,11,0,0,0);
+    if(now>=target)target=new Date(year+1,0,11,0,0,0);
+    const diff=Math.max(0,target-now);
+    document.getElementById('days').textContent=Math.floor(diff/86400000);
+    document.getElementById('hours').textContent=String(Math.floor(diff%86400000/3600000)).padStart(2,'0');
+    document.getElementById('minutes').textContent=String(Math.floor(diff%3600000/60000)).padStart(2,'0');
+    document.getElementById('seconds').textContent=String(Math.floor(diff%60000/1000)).padStart(2,'0');
+    document.getElementById('countNote').textContent=(now.getMonth()===0&&now.getDate()===11)
+      ?'النهارده يوم لولو! كل سنة وإنتِ أجمل حاجة ❤️'
+      :'موعد الاحتفال القادم: 11 يناير '+target.getFullYear()+' ✨';
+  }
+  updateCountdown();setInterval(updateCountdown,1000);
+
+  const lines=[
+    'لولو حبيبتي… ❤️',
+    'كل سنة وإنتِ طيبة يا أجمل وأغلى إنسانة، وكل سنة وضحكتك منوّرة الدنيا حواليا.',
+    'إنتِ مش مجرد حد بحبه؛ إنتِ شخص غالي على قلبي، وجوده بيخلّي الأيام العادية مميزة.',
+    'بتمنالك سنة جديدة مليانة فرحة ونجاح وراحة بال، وتحققي فيها كل حاجة نفسك فيها.',
+    'نفسي أفضل دايمًا شخص يسمعك، يشجعك، ويفرح من قلبه بكل خطوة حلوة بتعمليها.',
+    'شكرًا على كل ضحكة وكل لحظة حلوة وكل تفصيلة بتخلّي وجودك مميز.',
+    'مهما الأيام اتغيرت، أتمنى دايمًا تفضلي محاطة بالحب والاحترام والأمان.',
+    'عيد ميلاد سعيد يا لولو… ربنا يكتبلك أيام أجمل من كل اللي بتتمنيه.',
+    'بحبك يا لولو ❤️ — آدم'
+  ];
+  let typingToken=0;
+  function typeLetter(){
+    const token=++typingToken;const el=document.getElementById('letter');el.textContent='';
+    let row=0,col=0;
+    function step(){
+      if(token!==typingToken||row>=lines.length)return;
+      if(col<lines[row].length){el.textContent+=lines[row][col++];setTimeout(step,25);}
+      else{el.textContent+='\n\n';row++;col=0;setTimeout(step,200);}
+    }step();
+  }
+  document.getElementById('begin').addEventListener('click',()=>{
+    typeLetter();document.getElementById('countdown').scrollIntoView({behavior:'smooth'});floatHearts(12);
+  });
+  document.getElementById('retype').addEventListener('click',()=>{typeLetter();document.getElementById('letterSection').scrollIntoView({behavior:'smooth'});});
+  document.getElementById('giftBtn').addEventListener('click',()=>{
+    document.getElementById('reveal').classList.add('show');
+    document.getElementById('giftBtn').classList.add('bouquet-opened');
+    document.querySelector('.bouquet-caption').textContent='كل وردة في البوكيه دي بتقولك: إنتِ تستاهلي الفرح كله يا لولو 🌹✨';
+    fireworkFrame=190;
+    for(let i=0;i<6;i++)setTimeout(()=>burst(window.innerWidth*(.15+Math.random()*.7),window.innerHeight*(.15+Math.random()*.45),90),i*260);
+    crackle();floatHearts(36);
+  });
+  document.getElementById('heartBtn').addEventListener('click',()=>{floatHearts(42);fireworkFrame=70;for(let i=0;i<3;i++)setTimeout(()=>burst(window.innerWidth*(.2+Math.random()*.6),window.innerHeight*(.2+Math.random()*.4),60),i*200);});
+  document.getElementById('topBtn').addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+  const song=document.getElementById('song'),musicBtn=document.getElementById('musicBtn');
+  musicBtn.addEventListener('click',async()=>{
+    const status=document.getElementById('musicStatus');
+    if(song.paused){
+      try{await song.play();document.getElementById('equalizer').classList.add('playing');status.textContent='الموسيقى شغالة… استمتعوا باللحظة ♡';}
+      catch(e){status.textContent='مش لاقي ملف song.mp3. حط أغنيتك جنب ملف HTML بنفس الاسم، وبعدها جرّب تاني.';}
+    }else{song.pause();document.getElementById('equalizer').classList.remove('playing');status.textContent='الموسيقى متوقفة مؤقتًا.';}
+  });
+
+  // Each botanical paper card flips to reveal a handwritten-style love note.
+  document.querySelectorAll('.paper-card').forEach((card)=>{
+    card.addEventListener('click',()=>{
+      const flipped=card.classList.toggle('is-flipped');
+      card.setAttribute('aria-pressed',String(flipped));
+      document.getElementById('heartNoteStatus').textContent=flipped?'يا بخت الورقة اللي شايلة الكلام ده ❤️ دوسي عليها تاني علشان ترجعيها مقفولة.':'اختاري ورقة تانية… كل واحدة جواها كلام مخصوص ليكي 🌷';
+      if(flipped)floatHearts(5);
+    });
+  });
+
+  // Lightweight canvas fireworks (no external library) with optional synthetic crackle.
+  const canvas=document.getElementById('fireworks'),ctx=canvas.getContext('2d');
+  let particles=[],fireworkFrame=0;
+  function resizeFireworks(){canvas.width=window.innerWidth*devicePixelRatio;canvas.height=window.innerHeight*devicePixelRatio;ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0)}
+  resizeFireworks();window.addEventListener('resize',resizeFireworks);
+  function burst(x,y,count=75){
+    for(let i=0;i<count;i++){
+      const a=Math.random()*Math.PI*2, speed=1.3+Math.random()*5.2;
+      particles.push({x,y,vx:Math.cos(a)*speed,vy:Math.sin(a)*speed,life:45+Math.random()*40,max:85,size:1+Math.random()*2.8,color:['#ffe7a1','#e8c878','#fff7dc','#ff8ba7','#ffffff'][Math.floor(Math.random()*5)]});
+    }
+  }
+  function animateFireworks(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    particles=particles.filter(p=>p.life>0);
+    particles.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.vy+=.045;p.vx*=.99;p.vy*=.99;p.life--;ctx.globalAlpha=Math.max(0,p.life/p.max);ctx.fillStyle=p.color;ctx.beginPath();ctx.arc(p.x,p.y,p.size,0,Math.PI*2);ctx.fill()});
+    ctx.globalAlpha=1;
+    if(fireworkFrame>0){fireworkFrame--;if(fireworkFrame%8===0){burst(Math.random()*window.innerWidth,window.innerHeight*(.18+Math.random()*.48),45)}}
+    requestAnimationFrame(animateFireworks);
+  }
+  animateFireworks();
+  function crackle(){
+    try{const AC=window.AudioContext||window.webkitAudioContext;if(!AC)return;const ac=new AC();const duration=.24;const buffer=ac.createBuffer(1,Math.floor(ac.sampleRate*duration),ac.sampleRate);const data=buffer.getChannelData(0);for(let i=0;i<data.length;i++)data[i]=(Math.random()*2-1)*(1-i/data.length);const source=ac.createBufferSource();const filter=ac.createBiquadFilter();const gain=ac.createGain();source.buffer=buffer;filter.type='highpass';filter.frequency.value=1200;gain.gain.value=.12;source.connect(filter);filter.connect(gain);gain.connect(ac.destination);source.start();setTimeout(()=>ac.close(),500)}catch(e){}
+  }
+
+  function floatHearts(amount){
+    const layer=document.getElementById('hearts-layer'),icons=['♥','♡','✦','💛','✨'];
+    for(let i=0;i<amount;i++){
+      const el=document.createElement('span');el.className='floaty';el.textContent=icons[Math.floor(Math.random()*icons.length)];
+      el.style.left=Math.random()*100+'vw';el.style.color=Math.random()>.5?'#e8c878':'#fff0c2';
+      el.style.fontSize=(14+Math.random()*22)+'px';el.style.animationDuration=(4+Math.random()*4)+'s';
+      layer.appendChild(el);setTimeout(()=>el.remove(),8500);
+    }
+  }
+})();
+</script>
+</body>
+</html>
