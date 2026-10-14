@@ -10,7 +10,16 @@
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:25px}
 body{margin:0;background:var(--ink);color:var(--text);font-family:Tahoma,Arial,sans-serif;overflow-x:hidden}
-body:before{content:"";position:fixed;inset:0;z-index:-3;background:radial-gradient(ellipse at 50% 0%,#4b351d 0%,#17120c 30%,#080808 72%)}
+body:before{content:"";position:fixed;inset:0;z-index:-3;background:linear-gradient(180deg,rgba(4,8,25,.58),rgba(4,7,22,.82) 58%,rgba(4,5,16,.96)),url("https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=2000&q=90") center 38%/cover no-repeat,radial-gradient(ellipse at 50% 0%,#20365d 0%,#10182f 48%,#080808 100%)}
+body:after{content:"☾";position:fixed;z-index:-2;top:7vh;right:12vw;font-size:clamp(5rem,15vw,11rem);line-height:1;color:#fff4cf;text-shadow:0 0 22px #fff0bd,0 0 65px #b9d8ff;opacity:.72;pointer-events:none}
+.music-top{position:relative;z-index:30;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;padding:12px 14px;background:rgba(5,10,28,.88);border-bottom:1px solid #e8c87866;backdrop-filter:blur(14px);box-shadow:0 8px 35px #0005}
+.music-top .top-music-label{color:#fff0c5;font-weight:bold;font-size:.9rem}
+.music-top .btn{padding:10px 18px}
+.music-top .top-music-status{color:#e6d8ba;font-size:.78rem}
+.birthday-burst{position:fixed;inset:0;z-index:49;pointer-events:none;overflow:hidden;display:none}
+.birthday-burst.active{display:block}
+.birthday-burst span{position:absolute;bottom:-50px;font-size:clamp(1.4rem,4vw,3rem);animation: birthdayRocket 3.8s ease-out infinite;filter:drop-shadow(0 0 10px #ffda76)}
+@keyframes birthdayRocket{0%{transform:translateY(0) scale(.5) rotate(0);opacity:0}15%{opacity:1}65%{opacity:1;transform:translateY(-75vh) scale(1.25) rotate(160deg)}100%{opacity:0;transform:translateY(-105vh) scale(.2) rotate(280deg)}}
 #stars,#hearts-layer{position:fixed;inset:0;pointer-events:none;overflow:hidden}
 #stars{z-index:-1}#hearts-layer{z-index:20}
 .star{position:absolute;width:2px;height:2px;border-radius:50%;background:#fff0b9;animation:twinkle 3s infinite alternate}
@@ -260,6 +269,8 @@ footer{background:linear-gradient(180deg,transparent,#170d24);border-top:1px sol
 
 </head>
 <body>
+<div class="music-top"><span class="top-music-label">🎶 أغنيتك يا لولو</span><button class="btn" id="musicBtnTop" type="button">▶️ شغّلي الأغنية</button><span class="top-music-status" id="topMusicStatus">اضغطي هنا واسمعي أغنيتكم ❤️</span></div>
+<div class="birthday-burst" id="birthdayBurst" aria-hidden="true"><span style="left:5%;animation-delay:0s">🎆</span><span style="left:17%;animation-delay:.6s">🎇</span><span style="left:29%;animation-delay:1.2s">✨</span><span style="left:43%;animation-delay:.3s">🎆</span><span style="left:56%;animation-delay:1.5s">💖</span><span style="left:69%;animation-delay:.8s">🎇</span><span style="left:82%;animation-delay:1.1s">🎆</span><span style="left:93%;animation-delay:.4s">✨</span></div>
 <div id="stars" aria-hidden="true"></div><div id="hearts-layer" aria-hidden="true"></div>
 
 <header class="hero" id="home">
@@ -534,9 +545,12 @@ footer{background:linear-gradient(180deg,transparent,#170d24);border-top:1px sol
     document.getElementById('hours').textContent=String(Math.floor(diff%86400000/3600000)).padStart(2,'0');
     document.getElementById('minutes').textContent=String(Math.floor(diff%3600000/60000)).padStart(2,'0');
     document.getElementById('seconds').textContent=String(Math.floor(diff%60000/1000)).padStart(2,'0');
-    document.getElementById('countNote').textContent=(now.getMonth()===1&&now.getDate()===11)
-      ?'النهارده يوم لولو! كل سنة وإنتِ أجمل حاجة ❤️'
+    const birthdayToday=(now.getMonth()===1&&now.getDate()===11);
+    document.getElementById('countNote').textContent=birthdayToday
+      ?'🎉🎆 النهارده يوم لولو! كل سنة وإنتِ أجمل حاجة — الشماريخ منوّرة السما مخصوص ليكي ❤️🎇'
       :'موعد الاحتفال القادم: 11 فبراير '+target.getFullYear()+' ✨';
+    const burst=document.getElementById('birthdayBurst');
+    if(burst) burst.classList.toggle('active',birthdayToday);
   }
   updateCountdown();setInterval(updateCountdown,1000);
 
@@ -579,14 +593,16 @@ footer{background:linear-gradient(180deg,transparent,#170d24);border-top:1px sol
   document.getElementById('heartBtn').addEventListener('click',()=>{floatHearts(42);fireworkFrame=70;for(let i=0;i<3;i++)setTimeout(()=>burst(window.innerWidth*(.2+Math.random()*.6),window.innerHeight*(.2+Math.random()*.4),60),i*200);});
   document.getElementById('topBtn').addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
 
-  const song=document.getElementById('song'),musicBtn=document.getElementById('musicBtn');
-  musicBtn.addEventListener('click',async()=>{
-    const status=document.getElementById('musicStatus');
+  const song=document.getElementById('song'),musicBtn=document.getElementById('musicBtn'),musicBtnTop=document.getElementById('musicBtnTop');
+  async function toggleMusic(){
+    const status=document.getElementById('musicStatus'),topStatus=document.getElementById('topMusicStatus');
     if(song.paused){
-      try{await song.play();document.getElementById('equalizer').classList.add('playing');status.textContent='الموسيقى شغالة… استمتعوا باللحظة ♡';}
-      catch(e){status.textContent='لو الأغنية ما اشتغلتش، جرّبي تضغطي تشغيل مرة تانية ❤️';}
-    }else{song.pause();document.getElementById('equalizer').classList.remove('playing');status.textContent='الموسيقى متوقفة مؤقتًا.';}
-  });
+      try{await song.play();document.getElementById('equalizer').classList.add('playing');status.textContent='الموسيقى شغالة… استمتعوا باللحظة ♡';if(topStatus)topStatus.textContent='الأغنية شغالة ❤️';if(musicBtnTop)musicBtnTop.textContent='⏸️ إيقاف مؤقت';}
+      catch(e){status.textContent='لو الأغنية ما اشتغلتش، جرّبي تضغطي تشغيل مرة تانية ❤️';if(topStatus)topStatus.textContent='اضغطي مرة تانية لتشغيل الأغنية';}
+    }else{song.pause();document.getElementById('equalizer').classList.remove('playing');status.textContent='الموسيقى متوقفة مؤقتًا.';if(topStatus)topStatus.textContent='الأغنية متوقفة مؤقتًا';if(musicBtnTop)musicBtnTop.textContent='▶️ شغّلي الأغنية';}
+  }
+  if(musicBtn)musicBtn.addEventListener('click',toggleMusic);
+  if(musicBtnTop)musicBtnTop.addEventListener('click',toggleMusic);
 
   // Each botanical paper card flips to reveal a handwritten-style love note.
   document.querySelectorAll('.paper-card').forEach((card)=>{
