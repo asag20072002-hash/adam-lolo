@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#080808">
-<title>لولو | حكاية حب من آدم ♡</title>
+<meta name="theme-color" content="#090b20">
+<title>آدم ❤️ لولو | حكاية حب تحت القمر</title>
 <style>
 :root{--gold:#e8c878;--gold-light:#fff2c5;--gold-dark:#a8792c;--ink:#080808;--panel:#11100d;--text:#f8f0df;--muted:#c0b49a}
 *{box-sizing:border-box}
@@ -200,7 +200,64 @@ footer{text-align:center;color:#81755e;font-size:.75rem;padding:0 15px 30px}
 @media(max-width:700px){.gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.photo-slot{min-height:260px}.bouquet-button{height:390px}}
 @media(max-width:420px){.gallery{grid-template-columns:1fr}.photo-slot{min-height:300px}.bouquet-button{height:360px}}
 @media(prefers-reduced-motion:reduce){.bouquet-photo,.photo-slot img{transition:none}.bouquet-glint{animation:none;opacity:.6}}
+
+/* إضافات جديدة — تمت إضافتها مع الحفاظ على التصميم الأصلي */
+.extra-section{margin-top:clamp(65px,9vw,115px)!important}
+.love-wall{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:28px}
+.love-note{position:relative;overflow:hidden;min-height:170px;text-align:right;padding:23px;border-radius:20px;border:1px solid #d6b65b45;background:linear-gradient(145deg,#fff9 0%,#ffffff05 40%,#d6b65b0a 100%);color:#d8cbb2;line-height:2;cursor:pointer;transition:transform .25s,border-color .25s;}
+.love-note:hover{transform:translateY(-4px);border-color:#e8c878aa}
+.love-note .note-num{display:block;font-size:.75rem;letter-spacing:2px;color:var(--gold);margin-bottom:10px}
+.love-note strong{display:block;color:var(--gold-light);font-size:1.05rem;margin-bottom:8px}
+.love-note .hidden-line{display:none;color:#fff0d4;margin-top:12px}
+.love-note.open .hidden-line{display:block;animation:fadeIn .4s ease}
+.extra-gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px;margin-top:28px}
+.extra-gallery figure{margin:0;position:relative;overflow:hidden;border-radius:18px;min-height:210px;border:1px solid #d6b65b33;background:#ffffff08}
+.extra-gallery img{width:100%;height:100%;min-height:210px;object-fit:cover;display:block;transition:transform .6s}
+.extra-gallery figure:hover img{transform:scale(1.06)}
+.extra-gallery figcaption{position:absolute;bottom:0;right:0;left:0;padding:28px 13px 13px;background:linear-gradient(transparent,#090b15eF);color:#fff0d4;font-size:.9rem;line-height:1.8}
+.dream-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;margin-top:28px}
+.dream-item{padding:20px;border-radius:17px;background:#ffffff06;border:1px solid #d6b65b33;color:#d7cbb5;line-height:2}
+.dream-item span{font-size:1.5rem;margin-left:9px}
+.love-letter-big{padding:clamp(24px,5vw,50px);border:1px solid #d6b65b55;border-radius:25px;background:radial-gradient(ellipse at top,#d6b65b13,transparent 65%),#ffffff05;line-height:2.4;color:#e4d7c0;font-size:1.04rem;text-align:center}
+.love-letter-big p{margin:0 0 16px}
+.love-letter-big .gold-rule{margin-top:25px}
+@keyframes fadeIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:760px){.love-wall{grid-template-columns:repeat(2,minmax(0,1fr))}.extra-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:480px){.love-wall,.dream-list{grid-template-columns:1fr}.extra-gallery figure,.extra-gallery img{min-height:190px}}
+
 </style>
+
+<style id="lolo-deluxe-upgrade">
+:root{--gold:#ffc4df;--gold-light:#fff4fb;--gold-dark:#bd6898;--ink:#07091b;--panel:#101126;--text:#fff3fa;--muted:#cbb8d1}
+body{background:#07091b}
+body:before{background:radial-gradient(ellipse at 50% 0%,#34204d 0%,#12152e 38%,#07091b 78%)}
+body:after{content:"☾";position:fixed;z-index:-2;top:7%;right:7%;font-size:clamp(4rem,12vw,9rem);color:#fff0c5;text-shadow:0 0 35px #f8dff8aa;opacity:.72;pointer-events:none;animation:moonGlow 5s ease-in-out infinite alternate}
+@keyframes moonGlow{from{filter:drop-shadow(0 0 8px #e8c9ff55);transform:translateY(0)}to{filter:drop-shadow(0 0 28px #f8d9ffbb);transform:translateY(8px)}}
+.hero{isolation:isolate;overflow:hidden;background:radial-gradient(ellipse at 50% 85%,#7d285333,transparent 48%)}
+.hero:before{content:"✦  ·  ✧   ·  ✦   ·   ✧  ·  ✦";position:absolute;inset:12% 0 auto;text-align:center;color:#f9d7ff8a;letter-spacing:clamp(8px,3vw,28px);font-size:clamp(12px,3vw,25px);pointer-events:none;animation:twinkle 4s infinite alternate}
+.emblem{border-color:#ffb8deaa;box-shadow:0 0 55px #ff8ecb30,inset 0 0 25px #ff8ecb20}
+h1{color:#ffe8f5;text-shadow:0 0 18px #ff8fca77,0 0 55px #bd6bff44}
+.btn{border-color:#ffb6dc;background:linear-gradient(130deg,#fff0fa,#f2a8d0);box-shadow:0 8px 28px #ed7eb833}
+.btn.outline{border-color:#f8b9e2;color:#ffe6f5}
+nav{background:#09091beF;border-bottom-color:#f5a9d633}
+.card,.panel,.paper-card,.photo-slot,.promise{border-color:#f5a9d633!important;box-shadow:0 12px 35px #0003,0 0 25px #b44e9820}
+section h2,.section-kicker{color:#ffd1e8}
+.gold-rule:before,.gold-rule:after{background:linear-gradient(90deg,transparent,#ffb5db)}
+.photo-slot img{transition:transform .8s cubic-bezier(.2,.7,.2,1),filter .8s}
+.photo-slot:hover img{transform:scale(1.07);filter:saturate(1.18)}
+.gift-zone{position:relative}
+.gift-zone:before{content:"♡  ✧  ♡";display:block;text-align:center;color:#ffb9dc;letter-spacing:18px;font-size:1.5rem;animation:softPulse 2.4s infinite}
+@keyframes softPulse{50%{opacity:.45;transform:scale(1.04)}}
+footer{background:linear-gradient(180deg,transparent,#170d24);border-top:1px solid #ffb9dc33}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+</style>
+
+
+<style>
+.ambient-love{position:fixed;left:4%;bottom:8%;z-index:-1;color:#ffacd9;font-size:2rem;opacity:.24;pointer-events:none;animation:ambientFloat 7s ease-in-out infinite}
+@keyframes ambientFloat{0%,100%{transform:translateY(0) rotate(-12deg)}50%{transform:translateY(-28px) rotate(12deg)}}
+</style>
+
 </head>
 <body>
 <div id="stars" aria-hidden="true"></div><div id="hearts-layer" aria-hidden="true"></div>
@@ -226,7 +283,7 @@ footer{text-align:center;color:#81755e;font-size:.75rem;padding:0 15px 30px}
 <section id="countdown" class="container">
   <div class="section-kicker">THE BIG DAY</div>
   <h2>الوقت لحد عيد ميلادك 🎂</h2>
-  <p class="lead">في يوم 11 يناير، الدنيا زادت شخص جميل… والعدّاد ده بيحسب الوقت لحد الاحتفال الجاي بيكي.</p>
+  <p class="lead">في يوم 11 فبراير 2008، الدنيا زادت شخص جميل… والعدّاد ده بيحسب الوقت لحد عيد ميلادك الجاي كل 11 فبراير. 🎂</p>
   <div class="panel">
     <div class="countdown">
       <div class="timebox"><strong id="days">---</strong><span>يوم</span></div>
@@ -235,6 +292,7 @@ footer{text-align:center;color:#81755e;font-size:.75rem;padding:0 15px 30px}
       <div class="timebox"><strong id="seconds">--</strong><span>ثانية</span></div>
     </div>
     <p class="note" id="countNote">بنستنى يومك بكل حب ♡</p>
+    <p class="note" style="margin-top:8px">تاريخ ميلادك الأصلي: <strong style="color:var(--gold-light)">11 فبراير 2008</strong> — يوم اتولدت فيه حكاية جميلة اسمها لولو ♡</p>
   </div>
 </section>
 
@@ -346,7 +404,7 @@ footer{text-align:center;color:#81755e;font-size:.75rem;padding:0 15px 30px}
     <div class="section-kicker">A LITTLE MUSIC</div>
     <h2>مزيكا هادية للحظة دي 🎶</h2>
     <div class="equalizer" id="equalizer"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-    <p class="music-status" id="musicStatus">لو حابب تضيف أغنيتكم المفضلة، حط ملف MP3 جنب ملف HTML وسمّيه song.mp3، وبعدها فعّل مشغل الموسيقى من الكود.</p>
+    <p class="music-status" id="musicStatus">أغنيتكم موجودة هنا يا لولو ❤️ دوسي تشغيل واسمعيها وإنتِ بتكمّلي حكايتك مع آدم.</p>
     <audio id="song" preload="none" loop><source src="song.mp3" type="audio/mpeg"></audio>
     <button class="btn outline" id="musicBtn">تشغيل / إيقاف الموسيقى ♪</button>
   </div>
@@ -377,6 +435,75 @@ footer{text-align:center;color:#81755e;font-size:.75rem;padding:0 15px 30px}
     <button class="btn" id="heartBtn">خلّي الدنيا قلوب ❤️</button>
   </div>
 </section>
+
+
+<section class="container extra-section" id="moreLove">
+  <div class="section-kicker">A LITTLE MORE LOVE</div>
+  <h2>لسه عندي كلام حلو كتير ليكي يا لولو 💌</h2>
+  <p class="lead">الموقع ده مهما كبر مش هيكفي كل اللي نفسي أقوله… بس كل جزء فيه معمول علشان يفكّرك إنك غالية.</p>
+  <div class="love-wall">
+    <button class="love-note" type="button"><span class="note-num">LOVE NOTE 01</span><strong>إنتِ راحة قلبي 🤍</strong>في وسط دوشة الدنيا، فكرة إن فيه حد غالي عليّا زيك بتخلّي كل حاجة أهون.<span class="hidden-line">نفسي أكون ليكي نفس الطمأنينة اللي وجودك بيزرعها جوايا.</span></button>
+    <button class="love-note" type="button"><span class="note-num">LOVE NOTE 02</span><strong>ضحكتك حكاية ✨</strong>في ضحكات بتعدّي، وفي ضحكة بتفضل منوّرة اليوم كله… وضحكتك من النوع التاني.<span class="hidden-line">ربنا يخلّي الضحكة دي دايمًا على وشك، وتكون أيامك أخف وأجمل.</span></button>
+    <button class="love-note" type="button"><span class="note-num">LOVE NOTE 03</span><strong>إنتِ كفاية زي ما إنتِ 🌷</strong>مش محتاجة تبقي نسخة من حد، ولا تثبتي لأي حد إنك تستاهلي الحب.<span class="hidden-line">إنتِ تستاهلي التقدير والاحترام والحنية لمجرد إنك إنتِ.</span></button>
+    <button class="love-note" type="button"><span class="note-num">LOVE NOTE 04</span><strong>أنا فخور بيكي 🌟</strong>بكل مرة بتحاولي، وبكل مرة بتقومي تاني، حتى لو محدش شاف تعبك.<span class="hidden-line">أتمنى دايمًا تشوفي في نفسك الجمال والقوة اللي اللي بيحبك بيشوفهم فيكي.</span></button>
+    <button class="love-note" type="button"><span class="note-num">LOVE NOTE 05</span><strong>تفاصيلك بتفرق 🌙</strong>طريقة كلامك، ضحكتك، واهتمامك بالحاجات الصغيرة… تفاصيل بتخلّي ليكي مكان خاص.<span class="hidden-line">الحاجات البسيطة اللي منك بتعمل عندي ذكريات كبيرة.</span></button>
+    <button class="love-note" type="button"><span class="note-num">LOVE NOTE 06</span><strong>في صفّك دايمًا 🤝</strong>في أيام الإنجاز والفرحة، وفي الأيام اللي كل اللي محتاجاه فيها إن حد يسمعك.<span class="hidden-line">أتمنى أكون شخص يشجّعك ويحترم أحلامك ويسيبلك مساحة تكوني نفسك.</span></button>
+    <button class="love-note" type="button"><span class="note-num">LOVE NOTE 07</span><strong>إنتِ نعمة جميلة 🕊️</strong>وجود ناس طيبة في حياتنا بيفكّرنا إن لسه في حاجات تستاهل الامتنان.<span class="hidden-line">وجودك من الحاجات اللي بحمد ربنا عليها وبتمناها تفضل بخير.</span></button>
+    <button class="love-note" type="button"><span class="note-num">LOVE NOTE 08</span><strong>أحلامك مهمة 🎀</strong>نفسي أشوفك بتوصلي للحاجات اللي نفسك فيها، خطوة ورا خطوة، وبثقة في نفسك.<span class="hidden-line">وأكون من الناس اللي بتفرح بنجاحك من قلبها، مش اللي بتقلّل من تعبك.</span></button>
+    <button class="love-note" type="button"><span class="note-num">LOVE NOTE 09</span><strong>يومك يستاهل ورد 🌹</strong>مش علشان عيد ميلادك بس، لكن لأن كل يوم جديد فرصة أقولك إنك تستاهلي الحلو.<span class="hidden-line">أتمنى كل سنة من عمرك تحمل معاها أمان أكتر وفرح وأحلام بتتحقق.</span></button>
+    <button class="love-note" type="button"><span class="note-num">LOVE NOTE 10</span><strong>الحب أفعال قبل الكلام 💗</strong>الكلام الجميل مهم، والأجمل منه احترام وصدق واهتمام يظهروا في المواقف.<span class="hidden-line">أتمنى دايمًا يكون بينا كلام صريح وقلب رحيم ومساحة آمنة لكل واحد فينا.</span></button>
+    <button class="love-note" type="button"><span class="note-num">LOVE NOTE 11</span><strong>كل سنة ليكي بداية 🌅</strong>كل سنة جديدة فيها فرصة لحاجة أحلى، وتجربة جديدة، ونسخة أقوى منك.<span class="hidden-line">خلي عندك أمل في اللي جاي، وافتكري إنك تستاهلي أيام تليق بقلبك.</span></button>
+    <button class="love-note" type="button"><span class="note-num">LOVE NOTE 12</span><strong>من آدم للولو، بصدق ❤️</strong>مش لازم تكون كل الأيام مثالية علشان يبقى فيها لحظات حلوة تستاهل تتعاش.<span class="hidden-line">أتمنى نعرف نحافظ على الحلو، ونتعامل مع الصعب بعقل وحنية واحترام.</span></button>
+  </div>
+  <p class="note" style="margin-top:18px">اضغطي على أي كارت علشان تفتحي الكلام اللي مستخبي جواه ♡</p>
+</section>
+
+<section class="container extra-section" id="dreamsTogether">
+  <div class="section-kicker">LITTLE DREAMS, BIG FEELINGS</div>
+  <h2>أمنيات حلوة أتمنّاها ليكي ولأيامك 🌠</h2>
+  <p class="lead">مش كل الأمنيات هدايا تتلفّ بورق؛ في أمنيات بنتمناها من القلب لحد غالي علينا.</p>
+  <div class="dream-list">
+    <div class="dream-item"><span>🌷</span><strong>راحة بال:</strong> تنامي كل يوم وقلبك هادي، وتصحّي عندك طاقة وأمل في يوم جديد.</div>
+    <div class="dream-item"><span>🎓</span><strong>نجاح وفخر:</strong> تشوفي تعبك بيجيب نتيجة، وتفرحي بكل خطوة تقرّبك من حلمك.</div>
+    <div class="dream-item"><span>🧸</span><strong>أيام حنينة:</strong> ناس صادقة حواليكي، وكلام طيب، ومواقف تحسّسك إنك مش لوحدك.</div>
+    <div class="dream-item"><span>🌈</span><strong>ضحك كتير:</strong> أسباب صغيرة وكبيرة تفرّحك، وذكريات لما تفتكريها تبتسمي.</div>
+    <div class="dream-item"><span>🦋</span><strong>ثقة في نفسك:</strong> تعرفي قيمتك، وتحافظي على حدودك، وما تسمحيش لأي حد يقلّل منك.</div>
+    <div class="dream-item"><span>🌍</span><strong>مغامرات جميلة:</strong> أماكن جديدة، صور حلوة، وأيام تتحكي بعدين بحماس.</div>
+    <div class="dream-item"><span>💐</span><strong>حب يطمن:</strong> علاقة فيها احترام وصدق واحتواء، مش قلق ولا ضغط ولا خوف.</div>
+    <div class="dream-item"><span>✨</span><strong>أحلام بتتحقق:</strong> كل حاجة نفسك فيها وتناسب قلبك، تلاقي ليها طريق وفرصة وبداية.</div>
+  </div>
+</section>
+
+<section class="container extra-section" id="extraGallery">
+  <div class="section-kicker">OUR CINEMATIC CORNER</div>
+  <h2>شوية مشاهد كأنها من فيلم رومانسي 🎞️</h2>
+  <p class="lead">صور زيادة بأجواء دافية وسينمائية، علشان حكاية آدم ولولو يبقى ليها ألبوم أكبر.</p>
+  <div class="extra-gallery">
+    <figure><img loading="lazy" src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=850&q=85" alt="زوجان في لحظة حنان"><figcaption>حضن يقول: أنا هنا 🤍</figcaption></figure>
+    <figure><img loading="lazy" src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=850&q=85" alt="أجواء احتفال رومانسية"><figcaption>لحظات تستاهل تتصوّر ✨</figcaption></figure>
+    <figure><img loading="lazy" src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=850&q=85" alt="عائلة وأحباب في لحظة سعيدة"><figcaption>دفا اللمة والونس 🌙</figcaption></figure>
+    <figure><img loading="lazy" src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=850&q=85" alt="أصدقاء يستمتعون بوقت جميل"><figcaption>الضحك اللي بيخلّي اليوم أحلى ☀️</figcaption></figure>
+    <figure><img loading="lazy" src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=850&q=85" alt="باقة زهور وردية"><figcaption>ورد على قدّ جمال قلبك 🌸</figcaption></figure>
+    <figure><img loading="lazy" src="https://images.unsplash.com/photo-1494972308805-463bc619d34e?auto=format&fit=crop&w=850&q=85" alt="أضواء دافئة في المساء"><figcaption>ليلة هادية وذكريات حلوة 🌃</figcaption></figure>
+    <figure><img loading="lazy" src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=850&q=85" alt="شروق الشمس في الطبيعة"><figcaption>كل صباح بداية جديدة 🌅</figcaption></figure>
+    <figure><img loading="lazy" src="https://images.unsplash.com/photo-1518895949257-7621c3c786d7?auto=format&fit=crop&w=850&q=85" alt="زهور رقيقة في ضوء الشمس"><figcaption>تفاصيل رقيقة شبهك 🌷</figcaption></figure>
+  </div>
+  <p class="note" style="margin-top:15px">الصور للجوّ والإلهام، وتقدري في أي وقت تستبدليها بصوركم الحقيقية لما تحبي ♡</p>
+</section>
+
+<section class="container extra-section" id="oneMoreLetter">
+  <div class="section-kicker">ONE MORE LETTER, JUST FOR YOU</div>
+  <h2>رسالة زيادة… من غير مناسبة 💌</h2>
+  <div class="love-letter-big">
+    <p>يا لولو، يمكن أنا مش دايمًا بعرف أرتّب كل اللي جوايا في كلام، بس حبيت أعملك مكان صغير ترجعي له وقت ما تحتاجي ابتسامة أو كلمة حلوة.</p>
+    <p>عايزك تفتكري إنك مش مطالبة تبقي قوية طول الوقت، ومش لازم كل حاجة تبقى تمام كل يوم. خدي وقتك، ارتاحي لما تتعبي، وافرحي بنفسك حتى على الإنجازات الصغيرة اللي محدش واخد باله منها.</p>
+    <p>أتمنى السنة اللي جاية من عمرك تكون أحنّ عليكي، مليانة فرص حلوة، وناس بتقدّرك بجد، وأيام تخليكي تقولي: الحمد لله إن الحاجات الحلوة دي حصلتلي.</p>
+    <p>ولو رجعتي للموقع ده بعد فترة، أتمنى تبتسمي وتفتكري إن فيه حد قعد يفكر إزاي يعملك حاجة مميزة، ويحط فيها وقت ومجهود وكلام من قلبه علشان يشوفك مبسوطة.</p>
+    <p>كل سنة وإنتِ طيبة يا لولو، وكل سنة وإنتِ بتكبري في أحلامك وفرحتك وثقتك في نفسك. ربنا يكتبلك الخير في كل خطوة، ويحفظ قلبك من كل وجع، ويعوّضك دايمًا بأجمل مما تتمني. ❤️</p>
+    <div class="gold-rule">بحب أفرّحك… آدم ♡</div>
+  </div>
+</section>
+
 </main>
 
 <div class="end">
@@ -397,21 +524,24 @@ footer{text-align:center;color:#81755e;font-size:.75rem;padding:0 15px 30px}
     s.style.animationDelay=Math.random()*4+'s';s.style.animationDuration=2+Math.random()*4+'s';stars.appendChild(s);
   }
 
-  // Birthday is January 11. Count down to the next occurrence in the visitor's local time.
+  // تاريخ ميلاد لولو: 11 فبراير 2008. العدّاد يحسب للعيد القادم.
   function updateCountdown(){
     const now=new Date();let year=now.getFullYear();
-    let target=new Date(year,0,11,0,0,0);
-    if(now>=target)target=new Date(year+1,0,11,0,0,0);
+    let target=new Date(year,1,11,0,0,0);
+    if(now>=target)target=new Date(year+1,1,11,0,0,0);
     const diff=Math.max(0,target-now);
     document.getElementById('days').textContent=Math.floor(diff/86400000);
     document.getElementById('hours').textContent=String(Math.floor(diff%86400000/3600000)).padStart(2,'0');
     document.getElementById('minutes').textContent=String(Math.floor(diff%3600000/60000)).padStart(2,'0');
     document.getElementById('seconds').textContent=String(Math.floor(diff%60000/1000)).padStart(2,'0');
-    document.getElementById('countNote').textContent=(now.getMonth()===0&&now.getDate()===11)
+    document.getElementById('countNote').textContent=(now.getMonth()===1&&now.getDate()===11)
       ?'النهارده يوم لولو! كل سنة وإنتِ أجمل حاجة ❤️'
-      :'موعد الاحتفال القادم: 11 يناير '+target.getFullYear()+' ✨';
+      :'موعد الاحتفال القادم: 11 فبراير '+target.getFullYear()+' ✨';
   }
   updateCountdown();setInterval(updateCountdown,1000);
+
+  document.querySelectorAll('.love-note').forEach(function(card){card.addEventListener('click',function(){card.classList.toggle('open');});});
+
 
   const lines=[
     'لولو حبيبتي… ❤️',
@@ -454,7 +584,7 @@ footer{text-align:center;color:#81755e;font-size:.75rem;padding:0 15px 30px}
     const status=document.getElementById('musicStatus');
     if(song.paused){
       try{await song.play();document.getElementById('equalizer').classList.add('playing');status.textContent='الموسيقى شغالة… استمتعوا باللحظة ♡';}
-      catch(e){status.textContent='مش لاقي ملف song.mp3. حط أغنيتك جنب ملف HTML بنفس الاسم، وبعدها جرّب تاني.';}
+      catch(e){status.textContent='لو الأغنية ما اشتغلتش، جرّبي تضغطي تشغيل مرة تانية ❤️';}
     }else{song.pause();document.getElementById('equalizer').classList.remove('playing');status.textContent='الموسيقى متوقفة مؤقتًا.';}
   });
 
